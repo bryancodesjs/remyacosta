@@ -1,0 +1,69 @@
+<div class="container-lg">
+    <!-- barra de busqueda -->
+    <div class="row mt-3">
+        <div class="col-12">
+            <h3>Busqueda</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="input-group mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="Buscar libro" aria-label="Buscar libroe" aria-describedby="searchBtn">
+                <button class="btn btn-outline-secondary" type="button" id="searchBtn">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- resultados -->
+    <div class="row">
+        <div class="col-12">
+            <h6 *ngIf="libros">Mostrando {{libros.length}} resultados</h6>
+        </div>
+        <div class="col-12">
+            <!-- cabecera -->
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for=""><strong>ID</strong></label>
+                        </div>
+                        <div class="col-3">
+                            <label for=""><strong>Titulo</strong></label>
+                        </div>
+                        <div class="col-3">
+                            <label for=""><strong>Autor</strong></label>
+                        </div>
+                        <div class="col-2">
+                            <label for=""><strong>Año</strong></label>
+                        </div>
+                        <div class="col-2">
+                            <label for=""><strong>Acciones</strong></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- bucle de resultados -->
+            <div class="card bg-light mb-2" *ngFor="let libro of libros">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="">{{libro.id}}</label>
+                        </div>
+                        <div class="col-3">
+                            <label for="">{{libro.titulo}}</label>
+                        </div>
+                        <div class="col-3">
+                            <label for="">{{libro.autor}}</label>
+                        </div>
+                        <div class="col-2">
+                            <label for="">{{libro.ano}}</label>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-sm btn-primary" routerLink="detalles">Ver libro</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
